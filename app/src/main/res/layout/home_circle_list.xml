@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="false"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="5dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:background="@drawable/shape"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="110dp"
+             android:layout_margin="1dp"
+            android:layout_centerHorizontal="true"
+
+            >
+            <com.khalej.karam.RoundRectCornerImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="40dp"
+                android:background="#ffffff"
+
+                android:layout_marginRight="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/logo" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:layout_height="90dp"
+
+            android:layout_marginRight="10dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:orientation="vertical"
+                android:weightSum="8"
+                >
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:lines="1"
+                    android:text="محركات"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="#000000"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:lines="2"
+                    android:text=""
+                    android:textColor="#909090"
+                    android:textSize="14dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/cancel"
+                android:layout_gravity="end"
+                android:id="@+id/cancel_button"
+                />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:weightSum="8"
+            android:gravity="bottom"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1.6"
+                android:id="@+id/plus"
+                android:background="@drawable/plus"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="4.4"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:textSize="19dp"
+                android:id="@+id/numOfSets"
+                android:text="1"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:id="@+id/minus"
+                android:layout_weight="1.6"
+                android:background="@drawable/less"
+                />
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

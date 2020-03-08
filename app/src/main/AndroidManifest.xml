@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.khalej.karam">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".application"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.MyOrders"></activity>
+        <activity android:name=".activity.ConfirmOrder" />
+        <activity android:name=".activity.CardActivity" />
+        <activity android:name=".activity.ShowDetails" />
+        <activity android:name=".activity.SubCategory" />
+        <activity android:name=".activity.ForgetPassword" />
+        <activity android:name=".activity.Register_Company" />
+        <activity android:name=".activity.Register_provider" />
+        <activity android:name=".activity.Regester" />
+        <activity android:name=".activity.Login" />
+        <activity android:name=".activity.Notification"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCaJmmBcJN2UZHfRQPTNObCe7_j3Vdy7_k" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
