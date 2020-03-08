@@ -35,7 +35,7 @@ public class Offers_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final View view=inflater.inflate(R.layout.fragment_main_fragment, container, false);
+        final View view=inflater.inflate(R.layout.fragment_offers_, container, false);
 
         return view;
     }
