@@ -80,6 +80,26 @@ public interface apiinterface_home {
                                                ,@Part("notion_id") RequestBody notion_id
      );
 
+    @Multipart
+    @POST("montag/KARAM/api/register")
+    Call<ResponseBody> getcontacts_newaccountCompany(@Part MultipartBody.Part image, @Part("name") RequestBody name, @Part("password") RequestBody password, @Part("email") RequestBody address,
+                                              @Part("phone") RequestBody phone, @Part("type")RequestBody type,@Part("city")RequestBody city
+            ,@Part("phone_code") RequestBody phone_code,@Part("is_agree") RequestBody is_agree,@Part("shop_name") RequestBody company
+            ,@Part("notion_id") RequestBody numId
+    );
+
+    @Multipart
+    @POST("montag/KARAM/api/register")
+    Call<ResponseBody> getcontacts_newaccountProvider(@Part MultipartBody.Part image,@Part MultipartBody.Part imageId,@Part("name") RequestBody name, @Part("password") RequestBody password, @Part("email") RequestBody address,
+                                                     @Part("phone") RequestBody phone, @Part("type")RequestBody type,@Part("city")RequestBody city
+            ,@Part("phone_code") RequestBody phone_code,@Part("is_agree") RequestBody is_agree
+            ,@Part("notion_id") RequestBody numId,@Part("latitude") RequestBody lat,@Part("longitude") RequestBody lng
+    );
+
+
+    @FormUrlEncoded
+    @POST("montag/KARAM/api/canRest")
+    Call<Reset>getcontacts_ResetPassword(@Field("kayWord")String kayWord);
 
 }
 

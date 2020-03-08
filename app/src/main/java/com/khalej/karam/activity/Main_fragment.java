@@ -71,11 +71,15 @@ public class Main_fragment extends Fragment {
         layoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true));
         recyclerView2.setHasFixedSize(true);
+        return  view;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         fetchInfo();
         fetchInfo_annonce();
 
-
-        return  view;
     }
         public void fetchInfo(){
             progressBar.setVisibility(View.GONE);

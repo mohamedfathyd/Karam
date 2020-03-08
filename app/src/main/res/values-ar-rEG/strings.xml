@@ -3,6 +3,9 @@
     <string name="hint_name">الأسم</string>
     <string name="Region">المنطقة</string>
     <string name="more">المزيد</string>
+    <string name="MySubscribe">مشاركاتي</string>
+    <string name="SubScribe">أشتراك</string>
+    <string name="UnSubScribe">إلغاء الأشتراك</string>
     <string name="detail">تفاصيل الخدمة :</string>
     <string name="numberOf"> عدد القطع :</string>
     <string name="servcie">الخدمة المقدمة</string>

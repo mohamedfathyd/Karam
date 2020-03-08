@@ -155,7 +155,7 @@ TextView skip,signUp,forgetPassword;
 
 
                 dialog.setTitle("اختر نوع المستخدم ");
-                LinearLayout a,b,c,d,e,f;
+                LinearLayout a,b,c;
                 a=dialog.findViewById(R.id.a);
                 b=dialog.findViewById(R.id.b);
                 c=dialog.findViewById(R.id.c);

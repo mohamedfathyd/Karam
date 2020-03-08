@@ -10,63 +10,76 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_margin="20dp"
         android:id="@+id/a"
         android:weightSum="5"
         >
-<TextView
-    android:layout_width="0dp"
-    android:layout_weight="5"
-    android:layout_height="wrap_content"
-    android:text="مستخدم عادي"
-    android:gravity="center"
-    android:textSize="20dp"
-    android:textStyle="bold"
-    />
-       
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:text="مستخدم عادي"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
     </LinearLayout>
-    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/a"
+        android:id="@+id/v1"
+        android:layout_marginTop="2dp"
+        android:background="#000000" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:orientation="horizontal"
         android:layout_margin="20dp"
         android:id="@+id/b"
-        android:layout_below="@+id/a"
+        android:layout_below="@+id/v1"
         android:weightSum="5"
         >
         <TextView
             android:layout_width="0dp"
-           android:layout_weight="5"
+            android:layout_weight="5"
             android:layout_height="wrap_content"
             android:text="صاحب مصلحة"
             android:gravity="center"
             android:textSize="20dp"
             android:textStyle="bold"
             />
-      
-    </LinearLayout>
 
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/b"
+        android:id="@+id/v12"
+        android:layout_marginTop="2dp"
+        android:background="#000000" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:orientation="horizontal"
         android:layout_margin="20dp"
         android:id="@+id/c"
-        android:layout_below="@+id/b"
+        android:layout_below="@+id/v12"
+
         android:weightSum="5"
         >
         <TextView
             android:layout_width="0dp"
-           android:layout_weight="5"
+            android:layout_weight="5"
             android:layout_height="wrap_content"
             android:text="مندوب"
             android:gravity="center"
             android:textSize="20dp"
             android:textStyle="bold"
             />
-      
+
     </LinearLayout>
-   
+
 </RelativeLayout>

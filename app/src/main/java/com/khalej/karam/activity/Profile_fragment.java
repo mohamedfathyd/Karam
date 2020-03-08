@@ -37,7 +37,7 @@ public class Profile_fragment extends Fragment {
     private SharedPreferences.Editor edt;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
-    LinearLayout orders,notification,myinfo;
+    LinearLayout orders,notification,myinfo,mysubscribe;
     ProgressBar progressBar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,7 +56,7 @@ public class Profile_fragment extends Fragment {
         orders= view.findViewById(R.id.orders);
         notification=view.findViewById(R.id.notification);
         myinfo=view.findViewById(R.id.myinfo);
-
+        mysubscribe=view.findViewById(R.id.mysubscribe);
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +70,12 @@ public class Profile_fragment extends Fragment {
                 startActivity(new Intent(getActivity(),Notification.class));
             }
         });
+        myinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
         return view;
     }
 

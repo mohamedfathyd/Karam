@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Karam</string>
     <string name="hint_name">name</string>
+    <string name="MySubscribe">MySubscribe</string>
+    <string name="SubScribe">SubScribe</string>
+    <string name="UnSubScribe">UnSubScribe</string>
     <string name="face">Login With Facebook</string>
     <string name="more">more</string>
     <string name="detail">Servcie detail :</string>
