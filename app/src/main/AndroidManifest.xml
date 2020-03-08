@@ -19,7 +19,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.MyOrders"></activity>
+        <activity android:name=".activity.OrderDetails"></activity>
+        <activity android:name=".activity.Edit_Profile" />
+        <activity android:name=".activity.MySubScribes" />
+        <activity android:name=".activity.MyOrders" />
         <activity android:name=".activity.ConfirmOrder" />
         <activity android:name=".activity.CardActivity" />
         <activity android:name=".activity.ShowDetails" />
@@ -29,7 +32,8 @@
         <activity android:name=".activity.Register_provider" />
         <activity android:name=".activity.Regester" />
         <activity android:name=".activity.Login" />
-        <activity android:name=".activity.Notification"/>
+        <activity android:name=".activity.Notification" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCaJmmBcJN2UZHfRQPTNObCe7_j3Vdy7_k" />

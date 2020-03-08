@@ -1,6 +1,7 @@
 package com.khalej.karam.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.khalej.karam.R;
+import com.khalej.karam.activity.OrderDetails;
 import com.khalej.karam.model.Order;
 
 import java.util.List;
@@ -51,6 +53,14 @@ public class RecyclerAdapter_morder_onging extends RecyclerView.Adapter<Recycler
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent=new Intent(context, OrderDetails.class);
+                intent.putExtra("name",contactslist.get(position).getRepresentative_name());
+                intent.putExtra("details",contactslist.get(position).getDetails());
+                intent.putExtra("phone",contactslist.get(position).getRepresentative_phone());
+                intent.putExtra("image","http://jamalah.com/montag/KARAM/"+contactslist.get(position).getRepresentative_image());
+                intent.putExtra("latFrom",contactslist.get(position).getLatfrom());
+                intent.putExtra("lngFrom",contactslist.get(position).getLatTo());
+                context.startActivity(intent);
 
             }
         });

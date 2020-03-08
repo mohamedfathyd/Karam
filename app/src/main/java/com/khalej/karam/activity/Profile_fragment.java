@@ -57,6 +57,12 @@ public class Profile_fragment extends Fragment {
         notification=view.findViewById(R.id.notification);
         myinfo=view.findViewById(R.id.myinfo);
         mysubscribe=view.findViewById(R.id.mysubscribe);
+        mysubscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),MySubScribes.class));
+            }
+        });
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +79,7 @@ public class Profile_fragment extends Fragment {
         myinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getActivity(),Edit_Profile.class));
             }
         });
         return view;

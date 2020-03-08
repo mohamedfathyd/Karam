@@ -101,5 +101,18 @@ public interface apiinterface_home {
     @POST("montag/KARAM/api/canRest")
     Call<Reset>getcontacts_ResetPassword(@Field("kayWord")String kayWord);
 
+    @FormUrlEncoded
+    @POST("montag/KARAM/api/my_subscribs")
+    Call<List<contact_SubScribe>> getSubScribe(@Field("user_id") int id);
+
+
+    @FormUrlEncoded
+    @POST("montag/KARAM/api/add_subscribs")
+    Call<ResponseBody> getcontacts_RemoveSubScribe(@Field("product_id") int order_id, @Field("user_id") int user_id);
+
+    @FormUrlEncoded
+    @POST("montag/KARAM/api/all_Subscription")
+    Call<List<contact_MakeSubScribe>> getallSubScribe(@Field("user_id") int id);
+
 }
 

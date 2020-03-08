@@ -1,59 +1,69 @@
 package com.khalej.karam.activity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-
-import com.khalej.karam.Adapter.RecyclerAdapter_mySubScribe;
-import com.khalej.karam.Adapter.RecyclerAdapter_mySubScribeadd;
-import com.khalej.karam.R;
-import com.khalej.karam.model.Apiclient_home;
-import com.khalej.karam.model.apiinterface_home;
-import com.khalej.karam.model.contact_MakeSubScribe;
-
-
-import java.util.ArrayList;
-import java.util.List;
-
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import de.hdodenhof.circleimageview.CircleImageView;
+import me.anwarshahriar.calligrapher.Calligrapher;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
-public class SubScribe_fragment extends Fragment {
+import com.khalej.karam.Adapter.RecyclerAdapter_mySubScribe;
+import com.khalej.karam.Adapter.RecyclerAdapter_notification;
+import com.khalej.karam.R;
+import com.khalej.karam.model.Apiclient_home;
+import com.khalej.karam.model.apiinterface_home;
+import com.khalej.karam.model.contact_SubScribe;
+import com.khalej.karam.model.contact_SubScribe;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MySubScribes extends AppCompatActivity {
     private apiinterface_home apiinterface;
     RecyclerView recyclerView;
     EditText message;
     ImageView send;
 
     private RecyclerView.LayoutManager layoutManager;
-    private RecyclerAdapter_mySubScribeadd recyclerAdapter;
-    private List<contact_MakeSubScribe> contactList = new ArrayList<>();
+    private RecyclerAdapter_mySubScribe recyclerAdapter;
+    private List<contact_SubScribe> contactList = new ArrayList<>();
     private SharedPreferences sharedpref;
     private SharedPreferences.Editor edt;
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_subscribe, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_my_sub_scribes);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "Droid.ttf", true);
+        this.setTitle("");
+        toolbar.setNavigationIcon(R.drawable.ic_keyboard_arrow_left_black_24dp);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+        );
 
-        sharedpref = getActivity().getSharedPreferences("Education", Context.MODE_PRIVATE);
+        sharedpref = getSharedPreferences("Education", Context.MODE_PRIVATE);
         edt = sharedpref.edit();
-       recyclerView=view.findViewById(R.id.recyclerview);
-        layoutManager = new GridLayoutManager(getContext(), 1);
+        recyclerView=findViewById(R.id.recyclerview);
+        layoutManager = new GridLayoutManager(this, 1);
         StaggeredGridLayoutManager staggeredGridLayoutManager =
                 new StaggeredGridLayoutManager(
                         1, //The number of Columns in the grid
@@ -62,14 +72,13 @@ public class SubScribe_fragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         fetchInfo();
-        return view;
     }
     public void fetchInfo(){
         apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
-        Call<List<contact_MakeSubScribe>> call = apiinterface.getallSubScribe(sharedpref.getInt("id",0));
-        call.enqueue(new Callback<List<contact_MakeSubScribe>>() {
+        Call<List<contact_SubScribe>> call = apiinterface.getSubScribe(sharedpref.getInt("id",0));
+        call.enqueue(new Callback<List<contact_SubScribe>>() {
             @Override
-            public void onResponse(Call<List<contact_MakeSubScribe>> call, Response<List<contact_MakeSubScribe>> response) {
+            public void onResponse(Call<List<contact_SubScribe>> call, Response<List<contact_SubScribe>> response) {
 
                 try {
 
@@ -84,7 +93,7 @@ public class SubScribe_fragment extends Fragment {
                     }
                     else {
                         //  Toast.makeText(ChatActivity.this, "22", Toast.LENGTH_LONG).show();
-                        recyclerAdapter = new RecyclerAdapter_mySubScribeadd(getActivity(), contactList);
+                        recyclerAdapter = new RecyclerAdapter_mySubScribe(MySubScribes.this, contactList);
                         recyclerView.setAdapter(recyclerAdapter);
                         recyclerView.scrollToPosition(contactList.size() - 1);
                     }
@@ -97,7 +106,7 @@ public class SubScribe_fragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<contact_MakeSubScribe>> call, Throwable t) {
+            public void onFailure(Call<List<contact_SubScribe>> call, Throwable t) {
                 contactList=new ArrayList<>();
             }
         });

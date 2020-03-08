@@ -53,10 +53,10 @@ public class RecyclerAdapter_first extends RecyclerView.Adapter<RecyclerAdapter_
         edt = sharedpref.edit();
         if(sharedpref.getString("language","").trim().equals("ar")){
             holder.Name.setText(contactslist.get(position).getAr_title());
-            holder.price.setText(contactslist.get(position).getPrice()+"ريال");
+            holder.price.setText("جديد");
         }else{
             holder.Name.setText(contactslist.get(position).getEn_title());
-            holder.price.setText(contactslist.get(position).getPrice()+"Rial");
+            holder.price.setText("New");
         }
         holder.Name.setTypeface(myTypeface);
 
